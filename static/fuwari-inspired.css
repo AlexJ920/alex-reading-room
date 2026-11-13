@@ -37,7 +37,7 @@ body {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: url("notes-background-v2.webp") center center / cover no-repeat;
+  background: url("notes-background-v3.webp") center center / cover no-repeat;
 }
 .notes-page > .site-header,
 .notes-page > #main,
