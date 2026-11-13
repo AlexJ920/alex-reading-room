@@ -52,6 +52,10 @@ body {
 .notes-page .article-detail,
 .notes-page .editor-panel { background: rgba(255, 255, 255, .82); }
 .notes-page .article-form textarea { background: rgba(255, 255, 255, .78); }
+.notes-page .page-heading p,
+.notes-page .article-card p { color: #4d5365; }
+.notes-page .article-date { color: #59617a; }
+.notes-page .article-detail .article-body { color: #404858; }
 @media (max-width: 620px) {
   .notes-page::before { background-position: 63% center; }
 }
