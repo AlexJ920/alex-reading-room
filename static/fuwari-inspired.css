@@ -30,6 +30,29 @@ body {
 .home-page #main,
 .home-page .site-footer { position: relative; z-index: 1; }
 
+/* 阅读随笔使用清晰的整页背景；文字卡片本身保持半透明。 */
+.notes-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("notes-background.webp") center center / cover no-repeat;
+}
+.notes-page > .site-header,
+.notes-page > #main,
+.notes-page > .site-footer { position: relative; z-index: 1; }
+.notes-page .page-heading {
+  padding: 22px 28px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .82);
+}
+.notes-page .article-card,
+.notes-page .article-detail,
+.notes-page .editor-panel { background: rgba(255, 255, 255, .82); }
+.notes-page .article-form textarea { background: rgba(255, 255, 255, .78); }
+
 .site-header { background: transparent; border: 0; }
 .header-inner {
   min-height: 74px;
