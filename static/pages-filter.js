@@ -23,6 +23,7 @@ if (filterForm && bookCards.length) {
       card.style.display = show ? '' : 'none';
       if (show) visible += 1;
     });
+    window.dispatchEvent(new Event('shelf-filtered'));
     tabs.forEach((tab) => tab.classList.toggle('selected', tab.value === category));
     result.textContent = category || keyword ? `找到 ${visible} 本书` : '';
     const next = new URL(location.href);
