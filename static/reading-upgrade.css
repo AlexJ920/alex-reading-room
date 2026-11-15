@@ -58,6 +58,10 @@
 .series-info { padding:17px 16px; }
 .series-info h3 { font-size:16px; line-height:1.55; margin:6px 0; overflow-wrap:anywhere; }
 .series-progress { margin:0; color:#52617b; font-size:12px; }
+.series-stats { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.series-total-cost { margin-left: auto; color: #45588f; font-size: 12px; font-variant-numeric: tabular-nums; }
+.shelf-heading-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 12px; }
+.shelf-total-cost { color: #45588f; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .series-action { display:flex; justify-content:space-between; align-items:center; margin-top:12px; padding-top:10px; border-top:1px solid var(--line); color:var(--green); font-size:12px; }
 .series-action::after { content:'展开 ↓'; }
 .series-group[open] .series-action::after { content:'收起 ↑'; }
@@ -160,6 +164,25 @@
 .reading-links li { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
 .reading-links a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .reading-links time { color: var(--muted); font-size: 12px; }
+.shelf-cost-panel .section-title { margin-bottom: 8px; }
+.shelf-cost-panel .field-help { font-size: 13px; }
+.cost-series-settings { min-width: 0; margin: 16px 0; padding: 0; border: 0; }
+.cost-series-settings legend { margin-bottom: 8px; padding: 0; font-weight: 650; }
+.cost-series-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 8px; }
+.cost-option {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.cost-option input { margin: 0; accent-color: var(--green); }
+.cost-option-amount { margin-left: auto; color: #45588f; font-size: 12px; font-variant-numeric: tabular-nums; }
+.shelf-cost-panel .button { margin-top: 10px; }
 .article-card-footer,
 .article-card-book-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
 .article-card-book-links { min-width: 0; margin: 0; padding: 0; list-style: none; }

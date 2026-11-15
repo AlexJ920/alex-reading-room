@@ -64,8 +64,17 @@
         const progress = document.createElement('p');
         progress.className = 'series-progress';
         progress.textContent = `已读 ${finished} / ${total} 卷`;
+        const stats = document.createElement('div');
+        stats.className = 'series-stats';
+        stats.append(progress);
+        if (card.dataset.seriesCost) {
+          const cost = document.createElement('span');
+          cost.className = 'series-total-cost';
+          cost.textContent = card.dataset.seriesCost;
+          stats.append(cost);
+        }
         const action = document.createElement('span'); action.className = 'series-action'; action.textContent = '查看各卷';
-        copy.append(title,progress,action); summary.append(copy);
+        copy.append(title,stats,action); summary.append(copy);
         const inner = document.createElement('div'); inner.className = 'book-grid series-books';
         members.forEach(item => inner.append(item));
         group.append(summary,inner); grid.append(group);
