@@ -11,6 +11,7 @@ if (filterForm && bookCards.length) {
   grid.before(result);
   const params = new URLSearchParams(location.search);
   let category = params.get('category') || '';
+  const series = params.get('series') || '';
   search.value = params.get('q') || '';
 
   const apply = () => {
@@ -19,13 +20,22 @@ if (filterForm && bookCards.length) {
     bookCards.forEach((card) => {
       const title = card.querySelector('.book-info h3').textContent.toLocaleLowerCase();
       const bookCategory = card.querySelector('.category-label').textContent.trim();
-      const show = (!category || category === bookCategory) && (!keyword || title.includes(keyword));
+      const show = (!series || series === card.dataset.series)
+        && (!category || category === bookCategory)
+        && (!keyword || title.includes(keyword));
       card.style.display = show ? '' : 'none';
       if (show) visible += 1;
     });
     window.dispatchEvent(new Event('shelf-filtered'));
     tabs.forEach((tab) => tab.classList.toggle('selected', tab.value === category));
-    result.textContent = category || keyword ? `找到 ${visible} 本书` : '';
+    result.hidden = !series && !category && !keyword;
+    result.textContent = series ? `「${series}」· 找到 ${visible} 本书` : `找到 ${visible} 本书`;
+    if (!result.hidden) {
+      const clear = document.createElement('a');
+      clear.href = 'index.html#shelf';
+      clear.textContent = '清除筛选';
+      result.append(' ', clear);
+    }
     const next = new URL(location.href);
     next.searchParams.delete('q');
     next.searchParams.delete('category');

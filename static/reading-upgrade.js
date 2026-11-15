@@ -52,19 +52,25 @@
         const cover = visible[0].querySelector('.book-cover').cloneNode(true);
         cover.classList.add('series-cover');
         cover.querySelector('.reading-label')?.remove();
-        const badge = document.createElement('span'); badge.className = 'reading-label'; badge.textContent = `${visible.length} 本`;
+        const total = Number(card.dataset.seriesTotal) || members.length;
+        const finished = Number(card.dataset.seriesFinished) || 0;
+        const badge = document.createElement('span');
+        badge.className = 'reading-label';
+        badge.textContent = `${total} 本`;
         cover.append(badge); summary.append(cover);
         const copy = document.createElement('div');
         copy.className = 'series-info';
-        const label = document.createElement('span'); label.className = 'eyebrow'; label.textContent = 'SERIES';
         const title = document.createElement('h3'); title.textContent = name;
-        const count = document.createElement('p'); count.textContent = `已收藏 ${visible.length} 本`;
+        const progress = document.createElement('p');
+        progress.className = 'series-progress';
+        progress.textContent = `已读 ${finished} / ${total} 卷`;
         const action = document.createElement('span'); action.className = 'series-action'; action.textContent = '查看各卷';
-        copy.append(label,title,count,action); summary.append(copy);
+        copy.append(title,progress,action); summary.append(copy);
         const inner = document.createElement('div'); inner.className = 'book-grid series-books';
         members.forEach(item => inner.append(item));
         group.append(summary,inner); grid.append(group);
-        if (document.querySelector('.search-field input')?.value.trim()) group.open = true;
+        if (document.querySelector('.search-field input')?.value.trim()
+            || new URLSearchParams(location.search).get('series')) group.open = true;
       });
     };
     if (groups.size) {

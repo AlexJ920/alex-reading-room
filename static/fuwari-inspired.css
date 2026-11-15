@@ -194,6 +194,24 @@ body {
 .hero p { color: #67738a; margin-bottom: 14px; white-space: pre-line; }
 .hero-link { color: var(--green); border-color: #b7c0de; font-weight: 600; }
 
+/* Illustrated introduction card; the page wallpaper remains independent. */
+.hero.hero-illustrated { position: relative; isolation: isolate; min-height: 290px; border-radius: 22px; overflow: hidden; background: #58b5ef; }
+.hero-illustrated .hero-card-background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -2; }
+.hero-illustrated::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(239, 249, 255, .94), rgba(239, 249, 255, .79) 35%, rgba(239, 249, 255, .12) 67%, transparent 82%); }
+.hero-illustrated .hero-copy { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; border: 0; background: transparent; box-shadow: none; padding: 36px 40px; }
+.hero-illustrated h1 { color: #203a5a; }
+.hero-illustrated p { color: #304b67; font-size: 15px; max-width: 24em; }
+.hero-illustrated .eyebrow { color: #3d6589; }
+.hero-illustrated .hero-link { margin-top: 9px; color: #274f7c; border-color: #547fa6; }
+@media (max-width: 620px) {
+  .hero.hero-illustrated { min-height: 300px; }
+  .hero-illustrated .hero-card-background { object-position: 65% center; }
+  .hero-illustrated::before { background: linear-gradient(90deg, rgba(239, 249, 255, .90), rgba(239, 249, 255, .70) 55%, rgba(239, 249, 255, .12)); }
+  .hero-illustrated .hero-copy { padding: 28px 22px; }
+  .hero-illustrated h1 { font-size: clamp(25px, 6.8vw, 32px); }
+  .hero-illustrated p { max-width: 17em; font-size: 14px; }
+}
+
 .section-title h2, .page-heading h1 { color: var(--ink); letter-spacing: .2px; }
 .section-title h2::before {
   content: "";
@@ -221,7 +239,6 @@ body {
 }
 .book-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .book-cover { background: #eef0f7; }
-.manga-cover { background: #f5eff1; }
 .category-label {
   background: rgba(255, 255, 255, .94);
   border-color: rgba(227, 231, 241, .9);
@@ -277,7 +294,6 @@ body {
 .form-fields textarea { display: block; width: 100%; min-width: 0; margin-top: 6px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 9px; background: var(--white); color: var(--ink); resize: vertical; line-height: 1.7; }
 .form-fields textarea::placeholder { color: #a4aa9c; font-size: 12px; }
 .placeholder-cover { background: linear-gradient(145deg, #fbfbff, #e8eafa); border-left-color: #adb8df; }
-.manga-cover .placeholder-cover { background: linear-gradient(145deg, #fffaf9, #f3e8e5); border-left-color: #dfb0a4; }
 
 .page-heading { margin-top: 42px; }
 .page-heading h1 { font-weight: 650; }

@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f6f0">
   <meta name="description" content="Alex 的个人书屋，记录喜欢的轻小说、漫画与阅读随笔。">
-  <title>Alex书屋 · 把喜欢的故事，收进生活里</title>
+  <title>Alex书屋</title>
   <link rel="icon" href="static/site-icon-v3.png" type="image/png">
   <link rel="stylesheet" href="static/style.css">
-  <link rel="stylesheet" href="static/fuwari-inspired.css?v=notes-background-4">
+  <link rel="stylesheet" href="static/fuwari-inspired.css?v=shared-book-cover-1">
   <script defer src="static/app.js?v=book-order-2"></script>
-  <link rel="stylesheet" href="static/reading-upgrade.css?v=4">
-  <script defer src="static/reading-upgrade.js?v=4"></script>
-  <script defer src="static/pages-filter.js"></script>
+  <link rel="stylesheet" href="static/reading-upgrade.css?v=article-card-links-1">
+  <script defer src="static/reading-upgrade.js?v=series-progress-1"></script>
+  <script defer src="static/pages-filter.js?v=series-1"></script>
 </head>
 <body class="home-page ">
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -48,14 +48,14 @@
     <a class="github-button" href="https://github.com/AlexJ920" target="_blank" rel="noopener noreferrer" aria-label="访问 Alex 的 GitHub 主页">GitHub 主页 <span aria-hidden="true">↗</span></a>
   </aside>
   
-  <section class="sidebar-reading" aria-label="正在读"><span class="eyebrow">CURRENTLY READING</span><h2>正在读</h2>
+  <section class="sidebar-reading" data-section="reading" aria-label="正在读"><span class="eyebrow">CURRENTLY READING</span><h2>正在读</h2>
   
-  <a class="mini-book" href="books/1.html">
-    <img src="uploads/45ccc4ee596c4a339624358ea999977d.jpg" alt="" width="44" height="62" loading="lazy">
-    <span><strong>银荆的告白 第2卷（普版）</strong><small>在读</small></span>
+  <a class="mini-book" href="books/58.html">
+    <img src="uploads/1f3a66fbd8604c729b52963359d73fc6.jpg" alt="" width="44" height="62" loading="lazy">
+    <span><strong>青春之箱 第14卷（首限）</strong><small>在读</small></span>
   </a></section>
   
-  <section class="sidebar-reading" aria-label="最近入架"><span class="eyebrow">NEW ON MY SHELF</span><h2>最近入架</h2>
+  <section class="sidebar-reading" data-section="recent" aria-label="最近入架"><span class="eyebrow">NEW ON MY SHELF</span><h2>最近入架</h2>
   
   <a class="mini-book" href="books/4.html">
     <img src="uploads/e36b0ae6630e4fada01b3ac3176a2d91.jpg" alt="" width="44" height="62" loading="lazy">
@@ -69,94 +69,31 @@
   </a></section>
   </div>
   <div class="home-content">
-    <section class="hero">
-      <div class="hero-copy"><span class="eyebrow">ALEX'S READING ROOM</span><h1>把喜欢的故事，收进生活里<span class="small-dot">。</span></h1><p>这里收藏我的轻小说与漫画，也记录每一本书与我相遇的理由。</p><a class="hero-link" href="#shelf">一起逛逛书架 <span aria-hidden="true">↓</span></a></div>
+    <section class="hero hero-illustrated">
+      <img class="hero-card-background" src="static/hero-cyber-reading.png" alt="" aria-hidden="true" width="2086" height="859">
+      <div class="hero-copy"><span class="eyebrow">ALEX'S READING ROOM</span><h1>Alex 的赛博书屋</h1><p>这里记录我与每一本书的故事。</p><a class="hero-link" href="#shelf">一起逛逛书架 <span aria-hidden="true">↓</span></a></div>
     </section>
 
 <section id="shelf" class="shelf-section" aria-labelledby="shelf-title">
   <div class="section-title shelf-title"><div><span class="eyebrow">PURCHASED BOOKS</span><h2 id="shelf-title">已购书籍 <span class="count">62 本</span></h2></div><span class="muted">每一本，都有一个相遇的理由。</span></div>
   
-  <form method="get" class="filter-bar" action="index.html#shelf">
+  <form method="get" class="filter-bar shelf-toolbar" action="index.html#shelf">
     <div class="filter-tabs" role="group" aria-label="按分类筛选">
       <button type="submit" name="category" value="" class="filter-tab selected">全部书籍</button><button type="submit" name="category" value="轻小说" class="filter-tab ">轻小说</button><button type="submit" name="category" value="漫画" class="filter-tab ">漫画</button>
     </div>
     <div class="search-field"><input type="search" name="q" value="" placeholder="搜索书名…" aria-label="搜索书名"><button type="submit" name="category" value="" aria-label="开始搜索">搜索</button></div>
+    
+    <div class="shelf-view-switch" role="group" aria-label="书架展示方式" hidden><button type="button" data-shelf-view="series" aria-pressed="true">按系列查看</button><button type="button" data-shelf-view="books" aria-pressed="false">逐本查看</button></div>
   </form>
   
   
   
-  <div class="shelf-view-switch" role="group" aria-label="书架展示方式" hidden><button type="button" data-shelf-view="series" aria-pressed="true">按系列查看</button><button type="button" data-shelf-view="books" aria-pressed="false">逐本查看</button></div>
   <div class="book-grid" data-public-shelf>
     
-    <article class="book-card" data-series="玩玩的恋爱关系">
-      <a class="book-cover-link" href="books/62.html" aria-label="查看《玩玩的恋爱关系 第1卷（首刷）》详情">
-      <div class="book-cover ">
-        <img src="uploads/6a26c734505949e3b8764198d5046603.jpg" alt="《玩玩的恋爱关系 第1卷（首刷）》封面" loading="lazy" width="300" height="400">
-        
-        <span class="category-label">轻小说</span>
-        <span class="reading-label">待读</span>
-      </div>
-      </a>
-      <div class="book-info"><a class="book-title-link" href="books/62.html"><h3>玩玩的恋爱关系 第1卷（首刷）</h3></a>
-        
-        <div class="book-details">
-          <span class="edition-label">台版</span>
-          <div class="book-credits"><span>作者：葵关南</span><span>出版社：角川</span></div>
-        </div>
-        
-        
-        <div class="book-meta"><span>2026-11-15 入架</span><span class="price">¥75.00</span></div>
-        
-      </div>
-    </article>
     
-    <article class="book-card" data-series="这里是终末停滞委员会">
-      <a class="book-cover-link" href="books/61.html" aria-label="查看《这里是终末停滞委员会 第3卷（首限）》详情">
-      <div class="book-cover ">
-        <img src="uploads/c9394e1c826d4ad6a1ade30da707f119.jpg" alt="《这里是终末停滞委员会 第3卷（首限）》封面" loading="lazy" width="300" height="400">
-        
-        <span class="category-label">轻小说</span>
-        <span class="reading-label">待读</span>
-      </div>
-      </a>
-      <div class="book-info"><a class="book-title-link" href="books/61.html"><h3>这里是终末停滞委员会 第3卷（首限）</h3></a>
-        
-        <div class="book-details">
-          <span class="edition-label">台版</span>
-          <div class="book-credits"><span>作者：逢缘奇演</span><span>出版社：角川</span></div>
-        </div>
-        
-        
-        <div class="book-meta"><span>2026-11-15 入架</span><span class="price">¥65.70</span></div>
-        
-      </div>
-    </article>
-    
-    <article class="book-card" data-series="与猫相邻尚不识恋">
-      <a class="book-cover-link" href="books/60.html" aria-label="查看《与猫相邻尚不识恋 第4卷（首限）》详情">
-      <div class="book-cover manga-cover">
-        <img src="uploads/b6cca87b5016476d9521813d6c4ec1df.jpg" alt="《与猫相邻尚不识恋 第4卷（首限）》封面" loading="lazy" width="300" height="400">
-        
-        <span class="category-label">漫画</span>
-        <span class="reading-label">待读</span>
-      </div>
-      </a>
-      <div class="book-info"><a class="book-title-link" href="books/60.html"><h3>与猫相邻尚不识恋 第4卷（首限）</h3></a>
-        
-        <div class="book-details">
-          <span class="edition-label">台版</span>
-          <div class="book-credits"><span>作者：あきのこ</span><span>出版社：东立</span></div>
-        </div>
-        
-        
-        <div class="book-meta"><span>2026-11-15 入架</span><span class="price">¥49.00</span></div>
-        
-      </div>
-    </article>
-    
-    <article class="book-card" data-series="银荆的告白">
+    <article class="book-card" data-series="银荆的告白" data-series-total="4" data-series-finished="0">
       <a class="book-cover-link" href="books/1.html" aria-label="查看《银荆的告白 第2卷（普版）》详情">
-      <div class="book-cover ">
+      <div class="book-cover">
         <img src="uploads/45ccc4ee596c4a339624358ea999977d.jpg" alt="《银荆的告白 第2卷（普版）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">轻小说</span>
@@ -164,6 +101,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/1.html"><h3>银荆的告白 第2卷（普版）</h3></a>
+        <span class="volume-status" data-status="在读">在读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -176,9 +114,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="银荆的告白">
+    
+    <article class="book-card" data-series="银荆的告白" data-series-total="4" data-series-finished="0">
       <a class="book-cover-link" href="books/2.html" aria-label="查看《银荆的告白 第3卷（普版）》详情">
-      <div class="book-cover ">
+      <div class="book-cover">
         <img src="uploads/3a5625b5eb5e48219915a0ab80cfe3c3.jpg" alt="《银荆的告白 第3卷（普版）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">轻小说</span>
@@ -186,6 +125,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/2.html"><h3>银荆的告白 第3卷（普版）</h3></a>
+        <span class="volume-status" data-status="待读">待读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -198,9 +138,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="银荆的告白">
+    
+    <article class="book-card" data-series="银荆的告白" data-series-total="4" data-series-finished="0">
       <a class="book-cover-link" href="books/3.html" aria-label="查看《银荆的告白 第4卷（普版）》详情">
-      <div class="book-cover ">
+      <div class="book-cover">
         <img src="uploads/0bbd569ce0db4405b7fdc10696a445ff.jpg" alt="《银荆的告白 第4卷（普版）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">轻小说</span>
@@ -208,6 +149,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/3.html"><h3>银荆的告白 第4卷（普版）</h3></a>
+        <span class="volume-status" data-status="待读">待读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -220,9 +162,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="银荆的告白">
+    
+    <article class="book-card" data-series="银荆的告白" data-series-total="4" data-series-finished="0">
       <a class="book-cover-link" href="books/4.html" aria-label="查看《银荆的告白 第5卷（首限）》详情">
-      <div class="book-cover ">
+      <div class="book-cover">
         <img src="uploads/e36b0ae6630e4fada01b3ac3176a2d91.jpg" alt="《银荆的告白 第5卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">轻小说</span>
@@ -230,6 +173,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/4.html"><h3>银荆的告白 第5卷（首限）</h3></a>
+        <span class="volume-status" data-status="待读">待读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -242,53 +186,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="败犬女主太多了！">
-      <a class="book-cover-link" href="books/44.html" aria-label="查看《败犬女主太多了！ 第8卷（首刷）》详情">
-      <div class="book-cover ">
-        <img src="uploads/123e3d2a436c4c5d8b30ef02d8c6976d.jpg" alt="《败犬女主太多了！ 第8卷（首刷）》封面" loading="lazy" width="300" height="400">
-        
-        <span class="category-label">轻小说</span>
-        <span class="reading-label">已读</span>
-      </div>
-      </a>
-      <div class="book-info"><a class="book-title-link" href="books/44.html"><h3>败犬女主太多了！ 第8卷（首刷）</h3></a>
-        
-        <div class="book-details">
-          <span class="edition-label">台版</span>
-          <div class="book-credits"><span>作者：雨森焚火</span><span>出版社：东立</span></div>
-        </div>
-        
-        
-        <div class="book-meta"><span>2026-11-15 入架</span><span class="price">¥105.00</span></div>
-        
-      </div>
-    </article>
     
-    <article class="book-card" data-series="败犬女主太多了！">
-      <a class="book-cover-link" href="books/43.html" aria-label="查看《败犬女主太多了！ 第8.5卷（首刷）》详情">
-      <div class="book-cover ">
-        <img src="uploads/661b99e633a34f2292445bd3dc7c2642.jpg" alt="《败犬女主太多了！ 第8.5卷（首刷）》封面" loading="lazy" width="300" height="400">
-        
-        <span class="category-label">轻小说</span>
-        <span class="reading-label">已读</span>
-      </div>
-      </a>
-      <div class="book-info"><a class="book-title-link" href="books/43.html"><h3>败犬女主太多了！ 第8.5卷（首刷）</h3></a>
-        
-        <div class="book-details">
-          <span class="edition-label">台版</span>
-          <div class="book-credits"><span>作者：雨森焚火</span><span>出版社：东立</span></div>
-        </div>
-        
-        
-        <div class="book-meta"><span>2026-11-15 入架</span><span class="price">¥65.00</span></div>
-        
-      </div>
-    </article>
-    
-    <article class="book-card" data-series="败北女角太多了！">
+    <article class="book-card" data-series="败北女角太多了！" data-series-total="5" data-series-finished="5">
       <a class="book-cover-link" href="books/38.html" aria-label="查看《败北女角太多了！ 第1卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/40bddebf05144172990845ebb9377bba.jpg" alt="《败北女角太多了！ 第1卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -296,6 +197,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/38.html"><h3>败北女角太多了！ 第1卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -308,9 +210,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="败北女角太多了！">
+    
+    <article class="book-card" data-series="败北女角太多了！" data-series-total="5" data-series-finished="5">
       <a class="book-cover-link" href="books/39.html" aria-label="查看《败北女角太多了！ 第2卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/f0369058cd1e47469ac206d9dda86a12.jpg" alt="《败北女角太多了！ 第2卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -318,6 +221,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/39.html"><h3>败北女角太多了！ 第2卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -330,9 +234,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="败北女角太多了！">
+    
+    <article class="book-card" data-series="败北女角太多了！" data-series-total="5" data-series-finished="5">
       <a class="book-cover-link" href="books/40.html" aria-label="查看《败北女角太多了！ 第3卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/99816e1dc35e464dad356be58308771a.jpg" alt="《败北女角太多了！ 第3卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -340,6 +245,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/40.html"><h3>败北女角太多了！ 第3卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -352,9 +258,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="败北女角太多了！">
+    
+    <article class="book-card" data-series="败北女角太多了！" data-series-total="5" data-series-finished="5">
       <a class="book-cover-link" href="books/41.html" aria-label="查看《败北女角太多了！ 第4卷（普版）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/4627472939f84e0c8ceff1c2c4f5a15a.jpg" alt="《败北女角太多了！ 第4卷（普版）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -362,6 +269,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/41.html"><h3>败北女角太多了！ 第4卷（普版）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -374,9 +282,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="败北女角太多了！">
+    
+    <article class="book-card" data-series="败北女角太多了！" data-series-total="5" data-series-finished="5">
       <a class="book-cover-link" href="books/42.html" aria-label="查看《败北女角太多了！ 第5卷（普版）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/5aa1a89b24664a538f218596bcdc74bf.jpg" alt="《败北女角太多了！ 第5卷（普版）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -384,6 +293,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/42.html"><h3>败北女角太多了！ 第5卷（普版）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -396,9 +306,130 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="邻家天使">
+    
+    <article class="book-card" data-series="败犬女主太多了！" data-series-total="2" data-series-finished="2">
+      <a class="book-cover-link" href="books/44.html" aria-label="查看《败犬女主太多了！ 第8卷（首刷）》详情">
+      <div class="book-cover">
+        <img src="uploads/123e3d2a436c4c5d8b30ef02d8c6976d.jpg" alt="《败犬女主太多了！ 第8卷（首刷）》封面" loading="lazy" width="300" height="400">
+        
+        <span class="category-label">轻小说</span>
+        <span class="reading-label">已读</span>
+      </div>
+      </a>
+      <div class="book-info"><a class="book-title-link" href="books/44.html"><h3>败犬女主太多了！ 第8卷（首刷）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
+        
+        <div class="book-details">
+          <span class="edition-label">台版</span>
+          <div class="book-credits"><span>作者：雨森焚火</span><span>出版社：东立</span></div>
+        </div>
+        
+        <p class="book-thought">老马是对的</p>
+        <div class="book-meta"><span>2026-11-15 入架</span><span class="price">¥105.00</span></div>
+        
+      </div>
+    </article>
+    
+    
+    <article class="book-card" data-series="败犬女主太多了！" data-series-total="2" data-series-finished="2">
+      <a class="book-cover-link" href="books/43.html" aria-label="查看《败犬女主太多了！ 第8.5卷（首刷）》详情">
+      <div class="book-cover">
+        <img src="uploads/661b99e633a34f2292445bd3dc7c2642.jpg" alt="《败犬女主太多了！ 第8.5卷（首刷）》封面" loading="lazy" width="300" height="400">
+        
+        <span class="category-label">轻小说</span>
+        <span class="reading-label">已读</span>
+      </div>
+      </a>
+      <div class="book-info"><a class="book-title-link" href="books/43.html"><h3>败犬女主太多了！ 第8.5卷（首刷）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
+        
+        <div class="book-details">
+          <span class="edition-label">台版</span>
+          <div class="book-credits"><span>作者：雨森焚火</span><span>出版社：东立</span></div>
+        </div>
+        
+        
+        <div class="book-meta"><span>2026-11-15 入架</span><span class="price">¥65.00</span></div>
+        
+      </div>
+    </article>
+    
+    
+    <article class="book-card" data-series="玩玩的恋爱关系" data-series-total="1" data-series-finished="0">
+      <a class="book-cover-link" href="books/62.html" aria-label="查看《玩玩的恋爱关系 第1卷（首刷）》详情">
+      <div class="book-cover">
+        <img src="uploads/6a26c734505949e3b8764198d5046603.jpg" alt="《玩玩的恋爱关系 第1卷（首刷）》封面" loading="lazy" width="300" height="400">
+        
+        <span class="category-label">轻小说</span>
+        <span class="reading-label">待读</span>
+      </div>
+      </a>
+      <div class="book-info"><a class="book-title-link" href="books/62.html"><h3>玩玩的恋爱关系 第1卷（首刷）</h3></a>
+        <span class="volume-status" data-status="待读">待读</span>
+        
+        <div class="book-details">
+          <span class="edition-label">台版</span>
+          <div class="book-credits"><span>作者：葵关南</span><span>出版社：角川</span></div>
+        </div>
+        
+        
+        <div class="book-meta"><span>2026-11-15 入架</span><span class="price">¥75.00</span></div>
+        
+      </div>
+    </article>
+    
+    
+    <article class="book-card" data-series="这里是终末停滞委员会" data-series-total="1" data-series-finished="0">
+      <a class="book-cover-link" href="books/61.html" aria-label="查看《这里是终末停滞委员会 第3卷（首限）》详情">
+      <div class="book-cover">
+        <img src="uploads/c9394e1c826d4ad6a1ade30da707f119.jpg" alt="《这里是终末停滞委员会 第3卷（首限）》封面" loading="lazy" width="300" height="400">
+        
+        <span class="category-label">轻小说</span>
+        <span class="reading-label">待读</span>
+      </div>
+      </a>
+      <div class="book-info"><a class="book-title-link" href="books/61.html"><h3>这里是终末停滞委员会 第3卷（首限）</h3></a>
+        <span class="volume-status" data-status="待读">待读</span>
+        
+        <div class="book-details">
+          <span class="edition-label">台版</span>
+          <div class="book-credits"><span>作者：逢缘奇演</span><span>出版社：角川</span></div>
+        </div>
+        
+        
+        <div class="book-meta"><span>2026-11-15 入架</span><span class="price">¥65.70</span></div>
+        
+      </div>
+    </article>
+    
+    
+    <article class="book-card" data-series="与猫相邻尚不识恋" data-series-total="1" data-series-finished="0">
+      <a class="book-cover-link" href="books/60.html" aria-label="查看《与猫相邻尚不识恋 第4卷（首限）》详情">
+      <div class="book-cover">
+        <img src="uploads/b6cca87b5016476d9521813d6c4ec1df.jpg" alt="《与猫相邻尚不识恋 第4卷（首限）》封面" loading="lazy" width="300" height="400">
+        
+        <span class="category-label">漫画</span>
+        <span class="reading-label">待读</span>
+      </div>
+      </a>
+      <div class="book-info"><a class="book-title-link" href="books/60.html"><h3>与猫相邻尚不识恋 第4卷（首限）</h3></a>
+        <span class="volume-status" data-status="待读">待读</span>
+        
+        <div class="book-details">
+          <span class="edition-label">台版</span>
+          <div class="book-credits"><span>作者：あきのこ</span><span>出版社：东立</span></div>
+        </div>
+        
+        
+        <div class="book-meta"><span>2026-11-15 入架</span><span class="price">¥49.00</span></div>
+        
+      </div>
+    </article>
+    
+    
+    <article class="book-card" data-series="邻家天使" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/30.html" aria-label="查看《邻家天使 第1卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/ad9d518ad1a64965b0076f26be3e8bdf.jpg" alt="《邻家天使 第1卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -406,6 +437,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/30.html"><h3>邻家天使 第1卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -418,9 +450,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="邻家天使">
+    
+    <article class="book-card" data-series="邻家天使" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/31.html" aria-label="查看《邻家天使 第2卷（普版）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/143f52ef3a8349fcb42e48004961615a.jpg" alt="《邻家天使 第2卷（普版）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -428,6 +461,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/31.html"><h3>邻家天使 第2卷（普版）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -440,9 +474,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="邻家天使">
+    
+    <article class="book-card" data-series="邻家天使" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/32.html" aria-label="查看《邻家天使 第3卷（普版）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/5e1fd16e79d74cd7975523e2efcbe720.jpg" alt="《邻家天使 第3卷（普版）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -450,6 +485,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/32.html"><h3>邻家天使 第3卷（普版）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -462,9 +498,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="邻家天使">
+    
+    <article class="book-card" data-series="邻家天使" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/33.html" aria-label="查看《邻家天使 第4卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/5e5b2af72efd420783d10adadde161df.jpg" alt="《邻家天使 第4卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -472,6 +509,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/33.html"><h3>邻家天使 第4卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -484,9 +522,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="邻家天使">
+    
+    <article class="book-card" data-series="邻家天使" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/34.html" aria-label="查看《邻家天使 第5卷（特装版）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/aad64748f3b0480588ae2d82699b5b2c.jpg" alt="《邻家天使 第5卷（特装版）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -494,6 +533,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/34.html"><h3>邻家天使 第5卷（特装版）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -506,9 +546,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="邻家天使">
+    
+    <article class="book-card" data-series="邻家天使" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/35.html" aria-label="查看《邻家天使 第6卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/61f27a46a7814a5fb781f638b26fb923.jpg" alt="《邻家天使 第6卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -516,6 +557,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/35.html"><h3>邻家天使 第6卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -528,9 +570,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/45.html" aria-label="查看《青春之箱 第1卷（普版）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/50278c862a4b41deb00cea94b1d8321e.jpg" alt="《青春之箱 第1卷（普版）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -538,6 +581,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/45.html"><h3>青春之箱 第1卷（普版）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -550,9 +594,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/46.html" aria-label="查看《青春之箱 第2卷（首刷）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/5d476a51b14c45bf9b7f550db672c198.jpg" alt="《青春之箱 第2卷（首刷）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -560,6 +605,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/46.html"><h3>青春之箱 第2卷（首刷）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -572,9 +618,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/47.html" aria-label="查看《青春之箱 第3卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/b8489c9328c9410fa32b885a805157fa.jpg" alt="《青春之箱 第3卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -582,6 +629,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/47.html"><h3>青春之箱 第3卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -594,9 +642,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/48.html" aria-label="查看《青春之箱 第4卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/cd53a9708aec4b80987693ff009808c2.jpg" alt="《青春之箱 第4卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -604,6 +653,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/48.html"><h3>青春之箱 第4卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -616,9 +666,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/49.html" aria-label="查看《青春之箱 第5卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/4bcd56bf11f5401caffa8332245283b5.jpg" alt="《青春之箱 第5卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -626,6 +677,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/49.html"><h3>青春之箱 第5卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -638,9 +690,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/50.html" aria-label="查看《青春之箱 第6卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/158d2dbfe5f44cf48d2478152e5e19ef.jpg" alt="《青春之箱 第6卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -648,6 +701,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/50.html"><h3>青春之箱 第6卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -660,9 +714,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/51.html" aria-label="查看《青春之箱 第7卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/d9745e369cb24498b11187e2ea648a26.jpg" alt="《青春之箱 第7卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -670,6 +725,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/51.html"><h3>青春之箱 第7卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -682,9 +738,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/52.html" aria-label="查看《青春之箱 第8卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/4f83f65c3a9747d2908856bf6c497148.jpg" alt="《青春之箱 第8卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -692,6 +749,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/52.html"><h3>青春之箱 第8卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -704,9 +762,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/53.html" aria-label="查看《青春之箱 第9卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/9451bcc248f047d3ba3539ba2c89f6e3.jpg" alt="《青春之箱 第9卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -714,6 +773,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/53.html"><h3>青春之箱 第9卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -726,9 +786,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/54.html" aria-label="查看《青春之箱 第10卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/2d7353cb7efd4a239a7786eeb3db6742.jpg" alt="《青春之箱 第10卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -736,6 +797,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/54.html"><h3>青春之箱 第10卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -748,9 +810,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/55.html" aria-label="查看《青春之箱 第11卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/6cf432b5e8a24a23b062e8adaae463bc.jpg" alt="《青春之箱 第11卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -758,6 +821,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/55.html"><h3>青春之箱 第11卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -770,9 +834,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/56.html" aria-label="查看《青春之箱 第12卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/f63d4c8afeca42ba83bcf41e74bbe43a.jpg" alt="《青春之箱 第12卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -780,6 +845,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/56.html"><h3>青春之箱 第12卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -792,9 +858,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/57.html" aria-label="查看《青春之箱 第13卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/696a62a73b334f8f80b544b4ca0e03d6.jpg" alt="《青春之箱 第13卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -802,6 +869,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/57.html"><h3>青春之箱 第13卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -814,16 +882,18 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/58.html" aria-label="查看《青春之箱 第14卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/1f3a66fbd8604c729b52963359d73fc6.jpg" alt="《青春之箱 第14卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
-        <span class="reading-label">已读</span>
+        <span class="reading-label">在读</span>
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/58.html"><h3>青春之箱 第14卷（首限）</h3></a>
+        <span class="volume-status" data-status="在读">在读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -836,9 +906,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="青春之箱">
+    
+    <article class="book-card" data-series="青春之箱" data-series-total="15" data-series-finished="14">
       <a class="book-cover-link" href="books/59.html" aria-label="查看《青春之箱 第15卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/a2ec1125e060450fa4f0d20a6b7ecf82.jpg" alt="《青春之箱 第15卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -846,6 +917,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/59.html"><h3>青春之箱 第15卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -858,9 +930,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="花熏凛然">
+    
+    <article class="book-card" data-series="花熏凛然" data-series-total="2" data-series-finished="2">
       <a class="book-cover-link" href="books/37.html" aria-label="查看《熏香花朵凛然绽放 第17卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/5467af4989564b429c824bad4b0c0a07.jpg" alt="《熏香花朵凛然绽放 第17卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -868,6 +941,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/37.html"><h3>熏香花朵凛然绽放 第17卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -880,9 +954,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="花熏凛然">
+    
+    <article class="book-card" data-series="花熏凛然" data-series-total="2" data-series-finished="2">
       <a class="book-cover-link" href="books/36.html" aria-label="查看《熏香花朵凛然绽放 第8卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/243ad0563c824395bd09667a6599bf69.jpg" alt="《熏香花朵凛然绽放 第8卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -890,6 +965,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/36.html"><h3>熏香花朵凛然绽放 第8卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -902,9 +978,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="正相反的你与我">
+    
+    <article class="book-card" data-series="正相反的你与我" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/24.html" aria-label="查看《正相反的你与我 第1卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/614a4c0f8b084ae683edefde455d5534.jpg" alt="《正相反的你与我 第1卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -912,6 +989,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/24.html"><h3>正相反的你与我 第1卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -924,9 +1002,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="正相反的你与我">
+    
+    <article class="book-card" data-series="正相反的你与我" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/25.html" aria-label="查看《正相反的你与我 第2卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/cf0a7acf751a46209f07f8b53f70d5bb.jpg" alt="《正相反的你与我 第2卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -934,6 +1013,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/25.html"><h3>正相反的你与我 第2卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -946,9 +1026,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="正相反的你与我">
+    
+    <article class="book-card" data-series="正相反的你与我" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/26.html" aria-label="查看《正相反的你与我 第3卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/5d5fb727a4834b6cae333fccd65c8bfc.jpg" alt="《正相反的你与我 第3卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -956,6 +1037,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/26.html"><h3>正相反的你与我 第3卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -968,9 +1050,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="正相反的你与我">
+    
+    <article class="book-card" data-series="正相反的你与我" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/27.html" aria-label="查看《正相反的你与我 第4卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/f65f3b9d4cde46c78d54cc81c91af358.jpg" alt="《正相反的你与我 第4卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -978,6 +1061,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/27.html"><h3>正相反的你与我 第4卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -990,9 +1074,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="正相反的你与我">
+    
+    <article class="book-card" data-series="正相反的你与我" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/28.html" aria-label="查看《正相反的你与我 第5卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/af317984a64340faa3902c1352cfaf36.jpg" alt="《正相反的你与我 第5卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1000,6 +1085,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/28.html"><h3>正相反的你与我 第5卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -1012,9 +1098,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="正相反的你与我">
+    
+    <article class="book-card" data-series="正相反的你与我" data-series-total="6" data-series-finished="6">
       <a class="book-cover-link" href="books/29.html" aria-label="查看《正相反的你与我 第6卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/81b6cad86b404ce0bf3f21d3759f21bd.jpg" alt="《正相反的你与我 第6卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1022,6 +1109,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/29.html"><h3>正相反的你与我 第6卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -1034,9 +1122,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="金牌得主">
+    
+    <article class="book-card" data-series="金牌得主" data-series-total="9" data-series-finished="9">
       <a class="book-cover-link" href="books/16.html" aria-label="查看《金牌得主 第1卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/ddd9a310a6e4453f8b3968fc90d811b9.jpg" alt="《金牌得主 第1卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1044,6 +1133,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/16.html"><h3>金牌得主 第1卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -1056,9 +1146,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="金牌得主">
+    
+    <article class="book-card" data-series="金牌得主" data-series-total="9" data-series-finished="9">
       <a class="book-cover-link" href="books/17.html" aria-label="查看《金牌得主 第2卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/7f307a667d654e72834ab3a971a1c1ba.jpg" alt="《金牌得主 第2卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1066,6 +1157,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/17.html"><h3>金牌得主 第2卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -1078,9 +1170,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="金牌得主">
+    
+    <article class="book-card" data-series="金牌得主" data-series-total="9" data-series-finished="9">
       <a class="book-cover-link" href="books/18.html" aria-label="查看《金牌得主 第3卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/fb76084fd3424eb2b7f386338b929d88.jpg" alt="《金牌得主 第3卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1088,6 +1181,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/18.html"><h3>金牌得主 第3卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -1100,9 +1194,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="金牌得主">
+    
+    <article class="book-card" data-series="金牌得主" data-series-total="9" data-series-finished="9">
       <a class="book-cover-link" href="books/19.html" aria-label="查看《金牌得主 第4卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/07771475c7c54990b211090a226f1dd7.jpg" alt="《金牌得主 第4卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1110,6 +1205,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/19.html"><h3>金牌得主 第4卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -1122,9 +1218,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="金牌得主">
+    
+    <article class="book-card" data-series="金牌得主" data-series-total="9" data-series-finished="9">
       <a class="book-cover-link" href="books/20.html" aria-label="查看《金牌得主 第5卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/7c36e34622d7452a8f327c48fb8b94b0.jpg" alt="《金牌得主 第5卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1132,6 +1229,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/20.html"><h3>金牌得主 第5卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -1144,9 +1242,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="金牌得主">
+    
+    <article class="book-card" data-series="金牌得主" data-series-total="9" data-series-finished="9">
       <a class="book-cover-link" href="books/21.html" aria-label="查看《金牌得主 第6卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/11b3dc701b4f4eaeaecdad1fafbeb887.jpg" alt="《金牌得主 第6卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1154,6 +1253,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/21.html"><h3>金牌得主 第6卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -1166,9 +1266,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="金牌得主">
+    
+    <article class="book-card" data-series="金牌得主" data-series-total="9" data-series-finished="9">
       <a class="book-cover-link" href="books/22.html" aria-label="查看《金牌得主 第7卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/989c7713c1c24d7480f342fa2205a0bc.jpg" alt="《金牌得主 第7卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1176,6 +1277,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/22.html"><h3>金牌得主 第7卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -1188,9 +1290,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="金牌得主">
+    
+    <article class="book-card" data-series="金牌得主" data-series-total="9" data-series-finished="9">
       <a class="book-cover-link" href="books/23.html" aria-label="查看《金牌得主 第8卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/289e70ed08cf455cbc33460d72290538.jpg" alt="《金牌得主 第8卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1198,6 +1301,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/23.html"><h3>金牌得主 第8卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -1210,9 +1314,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="金牌得主">
+    
+    <article class="book-card" data-series="金牌得主" data-series-total="9" data-series-finished="9">
       <a class="book-cover-link" href="books/15.html" aria-label="查看《金牌得主 第9卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/340159e547b642b39102b5ea878468dd.jpg" alt="《金牌得主 第9卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1220,6 +1325,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/15.html"><h3>金牌得主 第9卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">简中</span>
@@ -1232,9 +1338,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="婚姻剧毒">
+    
+    <article class="book-card" data-series="婚姻剧毒" data-series-total="2" data-series-finished="2">
       <a class="book-cover-link" href="books/14.html" aria-label="查看《婚姻剧毒 第1卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/f68d38c0e7244cb384bc8de09d888882.jpg" alt="《婚姻剧毒 第1卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1242,6 +1349,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/14.html"><h3>婚姻剧毒 第1卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -1254,9 +1362,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="婚姻剧毒">
+    
+    <article class="book-card" data-series="婚姻剧毒" data-series-total="2" data-series-finished="2">
       <a class="book-cover-link" href="books/13.html" aria-label="查看《婚姻剧毒 第6卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/0ee4e139676f4500a3ac47f0b22f1ae2.jpg" alt="《婚姻剧毒 第6卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1264,6 +1373,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/13.html"><h3>婚姻剧毒 第6卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -1276,9 +1386,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="恋人不行">
+    
+    <article class="book-card" data-series="恋人不行" data-series-total="1" data-series-finished="1">
       <a class="book-cover-link" href="books/12.html" aria-label="查看《我们不可能成为恋人！绝对不行。（※似乎可行？） 第7卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/990a1d8ce2884400ad79f9b79db2f199.jpg" alt="《我们不可能成为恋人！绝对不行。（※似乎可行？） 第7卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1286,6 +1397,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/12.html"><h3>我们不可能成为恋人！绝对不行。（※似乎可行？） 第7卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -1298,9 +1410,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="坂本日常">
+    
+    <article class="book-card" data-series="坂本日常" data-series-total="4" data-series-finished="4">
       <a class="book-cover-link" href="books/11.html" aria-label="查看《坂本日常 第5卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/e2c60b596b3448dda9fe902eebc2c1dc.jpg" alt="《坂本日常 第5卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1308,6 +1421,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/11.html"><h3>坂本日常 第5卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -1320,9 +1434,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="坂本日常">
+    
+    <article class="book-card" data-series="坂本日常" data-series-total="4" data-series-finished="4">
       <a class="book-cover-link" href="books/10.html" aria-label="查看《坂本日常 第9卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/34889b7ab3824cc1bed8f6f90fd1a863.jpg" alt="《坂本日常 第9卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1330,6 +1445,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/10.html"><h3>坂本日常 第9卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -1342,9 +1458,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="坂本日常">
+    
+    <article class="book-card" data-series="坂本日常" data-series-total="4" data-series-finished="4">
       <a class="book-cover-link" href="books/9.html" aria-label="查看《坂本日常 第10卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/5bf704b110bb40b18f0cb190269b517a.jpg" alt="《坂本日常 第10卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1352,6 +1469,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/9.html"><h3>坂本日常 第10卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -1364,9 +1482,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="坂本日常">
+    
+    <article class="book-card" data-series="坂本日常" data-series-total="4" data-series-finished="4">
       <a class="book-cover-link" href="books/8.html" aria-label="查看《坂本日常 第11卷（普首）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/b5a18e0a44214e3e90fe843a171f8c38.jpg" alt="《坂本日常 第11卷（普首）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1374,6 +1493,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/8.html"><h3>坂本日常 第11卷（普首）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -1386,9 +1506,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="魔女与使魔">
+    
+    <article class="book-card" data-series="魔女与使魔" data-series-total="2" data-series-finished="2">
       <a class="book-cover-link" href="books/6.html" aria-label="查看《魔女与使魔 第1卷（普版）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/bfa3232d39ff42d9a2d224715ad3fbb8.jpg" alt="《魔女与使魔 第1卷（普版）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1396,6 +1517,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/6.html"><h3>魔女与使魔 第1卷（普版）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -1408,9 +1530,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="魔女与使魔">
+    
+    <article class="book-card" data-series="魔女与使魔" data-series-total="2" data-series-finished="2">
       <a class="book-cover-link" href="books/7.html" aria-label="查看《魔女与使魔 第4卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/1078f44106c54d8a8c6363ecefb0d7e8.jpg" alt="《魔女与使魔 第4卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1418,6 +1541,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/7.html"><h3>魔女与使魔 第4卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
@@ -1430,9 +1554,10 @@
       </div>
     </article>
     
-    <article class="book-card" data-series="伪恋">
+    
+    <article class="book-card" data-series="伪恋" data-series-total="1" data-series-finished="1">
       <a class="book-cover-link" href="books/5.html" aria-label="查看《伪恋 爱藏版 第1卷（首限）》详情">
-      <div class="book-cover manga-cover">
+      <div class="book-cover">
         <img src="uploads/95f668c8c66b43aab87216c1f36859e3.jpg" alt="《伪恋 爱藏版 第1卷（首限）》封面" loading="lazy" width="300" height="400">
         
         <span class="category-label">漫画</span>
@@ -1440,6 +1565,7 @@
       </div>
       </a>
       <div class="book-info"><a class="book-title-link" href="books/5.html"><h3>伪恋 爱藏版 第1卷（首限）</h3></a>
+        <span class="volume-status" data-status="已读">已读</span>
         
         <div class="book-details">
           <span class="edition-label">台版</span>
