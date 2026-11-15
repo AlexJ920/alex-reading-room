@@ -1,4 +1,30 @@
 (() => {
+  document.querySelectorAll('.sidebar-editor').forEach(form => {
+    const picker = form.querySelector('[data-sidebar-picker]');
+    const list = picker.querySelector('.sidebar-choices');
+    const mode = form.querySelector('[name=mode]');
+    const refresh = () => {
+      picker.hidden = mode.value !== 'manual';
+      const rows = [...list.children].filter(row => row.classList.contains('sidebar-choice'));
+      const selected = rows.filter(row => row.querySelector('input').checked);
+      picker.querySelector('.sidebar-selection-count').textContent = `已选择 ${selected.length} 本 · 按下方从上到下的顺序展示`;
+      rows.forEach((row,index) => {
+        row.classList.toggle('is-selected', row.querySelector('input').checked);
+        row.querySelector('[data-sidebar-move=up]').disabled = index === 0;
+        row.querySelector('[data-sidebar-move=down]').disabled = index === rows.length-1;
+      });
+    };
+    mode.addEventListener('change',refresh);
+    list.addEventListener('change',refresh);
+    list.addEventListener('click', event => {
+      const button = event.target.closest('[data-sidebar-move]'); if (!button) return;
+      const row = button.closest('.sidebar-choice');
+      if (button.dataset.sidebarMove === 'up' && row.previousElementSibling) list.insertBefore(row,row.previousElementSibling);
+      if (button.dataset.sidebarMove === 'down' && row.nextElementSibling) list.insertBefore(row.nextElementSibling,row);
+      refresh(); button.focus();
+    });
+    refresh();
+  });
   const grid = document.querySelector('[data-public-shelf]');
   if (grid) {
     const cards = [...grid.children];
@@ -15,7 +41,7 @@
       cards.forEach(card => {
         const name = card.dataset.series;
         const members = groups.get(name) || [];
-        if (mode === 'books' || members.length < 2) { grid.append(card); return; }
+        if (mode === 'books' || !name) { grid.append(card); return; }
         if (displayed.has(name)) return;
         displayed.add(name);
         const visible = members.filter(item => item.style.display !== 'none');
@@ -23,13 +49,17 @@
         const group = document.createElement('details');
         group.className = 'series-group';
         const summary = document.createElement('summary');
-        const cover = visible[0].querySelector('.book-cover img');
-        if (cover) { const img = cover.cloneNode(); img.className = 'series-summary-cover'; img.alt = ''; summary.append(img); }
+        const cover = visible[0].querySelector('.book-cover').cloneNode(true);
+        cover.classList.add('series-cover');
+        cover.querySelector('.reading-label')?.remove();
+        const badge = document.createElement('span'); badge.className = 'reading-label'; badge.textContent = `${visible.length} 本`;
+        cover.append(badge); summary.append(cover);
         const copy = document.createElement('div');
-        const label = document.createElement('span'); label.className = 'eyebrow'; label.textContent = 'MY COLLECTION';
+        copy.className = 'series-info';
+        const label = document.createElement('span'); label.className = 'eyebrow'; label.textContent = 'SERIES';
         const title = document.createElement('h3'); title.textContent = name;
-        const count = document.createElement('p'); count.textContent = `已收藏 ${visible.length} 本 · 按书架顺序排列`;
-        const action = document.createElement('span'); action.className = 'series-action'; action.textContent = '展开查看各卷 ↓';
+        const count = document.createElement('p'); count.textContent = `已收藏 ${visible.length} 本`;
+        const action = document.createElement('span'); action.className = 'series-action'; action.textContent = '查看各卷';
         copy.append(label,title,count,action); summary.append(copy);
         const inner = document.createElement('div'); inner.className = 'book-grid series-books';
         members.forEach(item => inner.append(item));
@@ -37,7 +67,7 @@
         if (document.querySelector('.search-field input')?.value.trim()) group.open = true;
       });
     };
-    if ([...groups.values()].some(items => items.length > 1)) {
+    if (groups.size) {
       switcher.hidden = false;
       switcher.addEventListener('click', event => {
         const button = event.target.closest('[data-shelf-view]'); if (!button) return;
